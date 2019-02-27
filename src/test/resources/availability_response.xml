@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AvailabilityLongResponseV2 xmlns="http://xml.agoda.com" xmlns:tns="http://xml.agoda.com"
+                            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" searchid="433070588241640000"
+                            status="200">
+    <Hotels>
+        <Hotel>
+            <Id>482</Id>
+            <CheapestRoom exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+            <PaxSettings submit="one" infantage="2" childage="0"/>
+            <Rooms>
+                <Room id="3185092" name="1 King Accessible Roll In Shower Non-Smoking" lineitemid="1" rateplan="B2B"
+                      ratetype="B2B" currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="6354c487-4d4d-5ab4-e07a-c432c17acc1a">
+                    <StandardTranslation>1 King Accessible Roll In Shower Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>2</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="144.10" tax="21.98" fees="0.00" inclusive="166.08"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185144" name="2 Double Beds Non-Smoking" lineitemid="2" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="7fdcadef-5ccd-f931-2b94-602e1d6ae205">
+                    <StandardTranslation>2 Double Beds Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="144.10" tax="21.98" fees="0.00" inclusive="166.08"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185132" name="1 Queen Bed Non-Smoking" lineitemid="3" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="c0fdf0ce-ec65-26d5-2b3b-323aa34a5903">
+                    <StandardTranslation>1 Queen Bed Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="144.10" tax="21.98" fees="0.00" inclusive="166.08"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185126" name="1 King Bed Non-Smoking" lineitemid="4" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="4189530e-fca8-9110-e21d-b7732ccbbdf1">
+                    <StandardTranslation>1 King Bed Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="144.10" tax="21.98" fees="0.00" inclusive="166.08"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185078" name="1 King Accessible Bathtub Non-Smoking" lineitemid="5" rateplan="B2B"
+                      ratetype="B2B" currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="31e675e7-a758-fd0d-913c-8a5ad6dfae0a">
+                    <StandardTranslation>1 King Accessible Bathtub Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>7</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="144.10" tax="21.98" fees="0.00" inclusive="166.08"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="288.19" tax="43.98" fees="0.00" inclusive="332.17"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185092" name="1 King Accessible Roll In Shower Non-Smoking" lineitemid="6" rateplan="B2B"
+                      ratetype="B2B" currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="84721310-33e9-0c2b-a468-2591ef15b594">
+                    <StandardTranslation>1 King Accessible Roll In Shower Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>2</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="145.62" tax="22.21" fees="0.00" inclusive="167.83"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="291.23" tax="44.44" fees="0.00" inclusive="335.67"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185144" name="2 Double Beds Non-Smoking" lineitemid="7" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="15b98af7-c136-b163-5237-8a80306bd21a">
+                    <StandardTranslation>2 Double Beds Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="145.62" tax="22.21" fees="0.00" inclusive="167.83"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="291.23" tax="44.44" fees="0.00" inclusive="335.67"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185132" name="1 Queen Bed Non-Smoking" lineitemid="8" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="4c300aed-b47a-2c8d-ef45-de47f13bc20f">
+                    <StandardTranslation>1 Queen Bed Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="145.62" tax="22.21" fees="0.00" inclusive="167.83"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="291.23" tax="44.44" fees="0.00" inclusive="335.67"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185126" name="1 King Bed Non-Smoking" lineitemid="9" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="7945763a-03e4-72c5-707e-cb6f41da0afb">
+                    <StandardTranslation>1 King Bed Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="145.62" tax="22.21" fees="0.00" inclusive="167.83"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="291.23" tax="44.44" fees="0.00" inclusive="335.67"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185078" name="1 King Accessible Bathtub Non-Smoking" lineitemid="10" rateplan="B2B"
+                      ratetype="B2B" currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="ba232009-76b4-c7a8-2448-3be39868ce25">
+                    <StandardTranslation>1 King Accessible Bathtub Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>7</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="145.62" tax="22.21" fees="0.00" inclusive="167.83"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="291.23" tax="44.44" fees="0.00" inclusive="335.67"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="146.15" tax="22.30" fees="0.00" inclusive="168.45"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185116" name="1 King Bed Balcony Non-Smoking" lineitemid="11" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="57316e9d-f60f-1cbf-05a0-9c5bef338fe9">
+                    <StandardTranslation>1 King Bed Balcony Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>1</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="152.62" tax="23.29" fees="0.00" inclusive="175.91"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="305.24" tax="46.58" fees="0.00" inclusive="351.82"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="305.24" tax="46.58" fees="0.00" inclusive="351.82"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185135" name="2 Doubles Balcony Non-Smoking" lineitemid="12" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="dd41bf4c-cc0c-a1d5-2a63-b1e83e3a2518">
+                    <StandardTranslation>2 Doubles Balcony Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="152.62" tax="23.29" fees="0.00" inclusive="175.91"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="305.24" tax="46.58" fees="0.00" inclusive="351.82"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="305.24" tax="46.58" fees="0.00" inclusive="351.82"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185116" name="1 King Bed Balcony Non-Smoking" lineitemid="13" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="eb13963f-cc5d-6e45-1f8c-6b0fdd6372e4">
+                    <StandardTranslation>1 King Bed Balcony Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>1</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="154.23" tax="23.54" fees="0.00" inclusive="177.77"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="308.46" tax="47.07" fees="0.00" inclusive="355.53"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="154.68" tax="23.60" fees="0.00" inclusive="178.28"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="154.68" tax="23.60" fees="0.00" inclusive="178.28"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185135" name="2 Doubles Balcony Non-Smoking" lineitemid="14" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="36834641-7e22-19d7-28d8-c8a61deeeff4">
+                    <StandardTranslation>2 Doubles Balcony Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="154.23" tax="23.54" fees="0.00" inclusive="177.77"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="308.46" tax="47.07" fees="0.00" inclusive="355.53"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="154.68" tax="23.60" fees="0.00" inclusive="178.28"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="154.68" tax="23.60" fees="0.00" inclusive="178.28"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185110" name="1 King Junior Suite Non-Smoking" lineitemid="15" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254969"
+                      blockid="7cc74689-0351-2d3c-3fbf-3fe70bd611a9">
+                    <StandardTranslation>1 King Junior Suite Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="169.67" tax="25.90" fees="0.00" inclusive="195.57"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="339.34" tax="51.79" fees="0.00" inclusive="391.13"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">This booking is Non-Refundable and cannot be amended or modified.
+                            If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">This booking is Non-Refundable and cannot be amended or
+                            modified. If you fail to arrive or cancel the booking, no refund will be given.
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="365" charge="P">100</PolicyParameter>
+                            <PolicyParameter days="0" charge="P">100</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate after="2019-02-27">
+                                <Rate exclusive="339.34" tax="51.79" fees="0.00" inclusive="391.13"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+                <Room id="3185110" name="1 King Junior Suite Non-Smoking" lineitemid="16" rateplan="B2B" ratetype="B2B"
+                      currency="USD" model="Merchant" ratecategoryid="1254967"
+                      blockid="f9aba985-bb87-a40a-ac7d-9e6bc9569aad">
+                    <StandardTranslation>1 King Junior Suite Non-Smoking</StandardTranslation>
+                    <MaxRoomOccupancy normalbedding="1" extrabeds="0"/>
+                    <RemainingRooms>9</RemainingRooms>
+                    <RateInfo>
+                        <Rate exclusive="171.45" tax="26.17" fees="0.00" inclusive="197.62"/>
+                        <Included/>
+                        <Excluded/>
+                        <TotalPaymentAmount exclusive="342.90" tax="52.33" fees="0.00" inclusive="395.23"/>
+                    </RateInfo>
+                    <Cancellation>
+                        <PolicyText language="en-us">Any cancellation received within 1 day prior to the arrival date
+                            will incur the first night's charge. Failure to arrive at your hotel or property will be
+                            treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyText>
+                        <PolicyTranslated language="en-us">Any cancellation received within 1 day prior to the arrival
+                            date will incur the first night's charge. Failure to arrive at your hotel or property will
+                            be treated as a No-Show and will incur the first night's charge (Hotel policy).
+                        </PolicyTranslated>
+                        <PolicyParameters>
+                            <PolicyParameter days="2" charge="N">0</PolicyParameter>
+                            <PolicyParameter days="1" charge="N">1</PolicyParameter>
+                            <PolicyParameter days="0" charge="N">1</PolicyParameter>
+                        </PolicyParameters>
+                        <PolicyDates>
+                            <PolicyDate before="2019-03-31">
+                                <Rate exclusive="0.00" tax="0.00" fees="0.00" inclusive="0.00"/>
+                            </PolicyDate>
+                            <PolicyDate before="2019-04-01">
+                                <Rate exclusive="171.68" tax="26.20" fees="0.00" inclusive="197.88"/>
+                            </PolicyDate>
+                            <PolicyDate after="2019-04-01">
+                                <Rate exclusive="171.68" tax="26.20" fees="0.00" inclusive="197.88"/>
+                            </PolicyDate>
+                        </PolicyDates>
+                    </Cancellation>
+                </Room>
+            </Rooms>
+        </Hotel>
+    </Hotels>
+</AvailabilityLongResponseV2>
