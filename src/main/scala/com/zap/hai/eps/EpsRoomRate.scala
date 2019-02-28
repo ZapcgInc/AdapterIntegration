@@ -2,9 +2,9 @@ package com.zap.hai.eps
 
 import com.fasterxml.jackson.annotation.{JsonIgnoreProperties, JsonProperty}
 
-class PropertyAvailabilityRoomRates(
-                                     @JsonProperty("nightly") var nightlyPrice: List[List[PropertyAvailabilityPrice]],
-                                     @JsonProperty("stay") stayPrice: Array[PropertyAvailabilityPrice],
-                                     @JsonProperty("fees") fees: Array[PropertyAvailabilityPrice],
-                                     @JsonProperty("totals") totals: PropertyAvailabilityTotalPrice
-                                   )
+case class EpsRoomRate(
+                        nightly: List[List[EpsPrice]],
+                        stay: Array[EpsPrice],
+                        fees: Array[EpsPrice],
+                        totals: EpsTotalPrice
+                      )

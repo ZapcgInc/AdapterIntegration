@@ -2,29 +2,12 @@ package com.zap.hai.eps
 
 import com.fasterxml.jackson.annotation.{JsonIgnoreProperties, JsonProperty}
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-class PropertyAvailabilityTotalPrice
-{
+case class EpsTotalPrice(
 
-    @JsonProperty("inclusive")
-    var inclusive: PropertyAvailabilityPriceWithCurrency = _
+                          @JsonProperty("inclusive") var inclusive: EpsPriceWithCurrency,
+                          @JsonProperty("exclusive") var exclusive: EpsPriceWithCurrency,
+                          @JsonProperty("strikethrough") var strikeThrough: EpsPriceWithCurrency,
+                          @JsonProperty("marketing_fee") var marketingFee: EpsPriceWithCurrency,
+                          @JsonProperty("minimum_selling_price") var minSellingPrice: EpsPriceWithCurrency,
 
-    @JsonProperty("exclusive")
-    var exclusive: PropertyAvailabilityPriceWithCurrency = _
-
-    @JsonProperty("strikethrough")
-    var strikeThrough: PropertyAvailabilityPriceWithCurrency = _
-
-    @JsonProperty("marketing_fee")
-    var marketingFee: PropertyAvailabilityPriceWithCurrency = _
-
-    @JsonProperty("minimum_selling_price")
-    var minSellingPrice: PropertyAvailabilityPriceWithCurrency = _
-
-    def this(p_inclusive:PropertyAvailabilityPriceWithCurrency, p_exclusive:PropertyAvailabilityPriceWithCurrency)
-    {
-        this()
-        inclusive = p_inclusive
-        exclusive = p_exclusive
-    }
-}
+                        )

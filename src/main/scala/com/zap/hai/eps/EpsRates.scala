@@ -13,7 +13,7 @@ case class EpsRates(
                      @JsonProperty("bed_groups") bedGroups: List[EpsBedGroup],
                      @JsonProperty("cancel_penalties") cancelPolicies: List[EpsCancelPenalty],
                      amenities: List[EpsAmenities],
-                     @JsonProperty("occupancies") roomPriceByOccupancy: Map[String, PropertyAvailabilityRoomRates],
+                     @JsonProperty("occupancies") roomPriceByOccupancy: Map[String, EpsRoomRate],
                      @JsonProperty("promo_id") promoId: String,
                      @JsonProperty("promo_description") promoDesc: String
 

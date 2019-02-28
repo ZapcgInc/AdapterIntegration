@@ -1,4 +1,4 @@
 package com.zap.hai.eps
 
-case class EpsBedGroup(links: Map[String, EpsLink])
+case class EpsBedGroup(links: Map[String, EpsLink], configuration: List[EpsConfiguration])
 

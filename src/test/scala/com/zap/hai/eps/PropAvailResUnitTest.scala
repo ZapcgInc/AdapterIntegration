@@ -9,7 +9,12 @@ class PropAvailResUnitTest extends FunSuite {
   test("Json To Object"){
 
     val json = fileio.readFileAsString("eps_property_availability_response.json").get
-    println(json)
+    //println(json)
+
+    json.parseJsonAsEither[List[EpsPropertyAvailability]] match {
+      case Right(obj) => println(obj.toJsonPretty)
+      case Left(t) => t.printStackTrace()
+    }
 
   }
 
