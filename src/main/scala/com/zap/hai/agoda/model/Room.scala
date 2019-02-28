@@ -5,13 +5,6 @@ import zap.framework.xml.XmlSupport
 import scala.collection.mutable.ArrayBuffer
 import scala.xml.{Elem, Node, NodeSeq}
 
-
-/*
-
-@XmlElement(name = "RateInfo")var rateInfo: RateInfo = _
-@XmlElement(name = "Cancellation")var cancellation: Cancellation = _
-@XmlElement(name = "Benefits")var benefits: Array[Benefit] = _
- */
 case class Room(id:String, name : String, lineItemId: Int, ratePlan:String, rateType:String, currency:String, model:String,
                 rateCategoryId:String, bockId:String, standardTranslation:String, maxRoomOccupancy:MaxRoomOccupancy,
                 remainingRooms:Int, rateInfo:RateInfo, cancellation:Cancellation, benefits : List[Benefit])
@@ -34,10 +27,9 @@ object Room extends XmlSupport[Room] {
     (node \ "MaxRoomOccupancy").map{n => builder.withMaxRoomOccupancy(n.toMaxRoomOccupancy)}
     builder.withRemainingRooms((node \ "RemainingRooms").text)
     (node \ "RateInfo").map{n => builder.withRateInfo(n.toRateInfo)}
-
-
+    (node \ "Cancellation").map{n => builder.withCancellation(n.toCancellation)}
+    (node \ "Benefits" \\ "Benefit").map{n => builder.addBenefits(n.toBenefit)}
     builder.build()
-
   }
 
   override def toXml(any: Room): Elem = ???
@@ -135,7 +127,7 @@ class RoomBuilder {
     this
   }
 
-  def withBockId(bockId:String): Unit = {
+  def withBockId(bockId:String) = {
     this.bockId = bockId
     this
   }

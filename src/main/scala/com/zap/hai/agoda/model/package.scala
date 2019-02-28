@@ -22,8 +22,15 @@ package object model {
 
   implicit class XmlNodeToAgodaObject(ns: NodeSeq) {
     def toMaxRoomOccupancy = MaxRoomOccupancy.fromXml(ns.head)
-
-
+    def toRate = Rate.fromXml(ns.head)
+    def toSurcharge = Surcharge.fromXml(ns.head)
+    def toRateInfo = RateInfo.fromXml(ns.head)
+    def toTotalPaymentAmount = TotalPaymentAmount.fromXml(ns.head)
+    def toPromotionType = PromotionType.fromXml(ns.head)
+    def toPolicyDate = PolicyDate.fromXml(ns.head)
+    def toPolicyParameter = PolicyParameter.fromXml(ns.head)
+    def toCancellation = Cancellation.fromXml(ns.head)
+    def toBenefit = Benefit.fromXml(ns.head)
   }
 
 

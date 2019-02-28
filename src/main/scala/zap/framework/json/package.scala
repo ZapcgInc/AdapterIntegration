@@ -17,7 +17,7 @@ package object json {
     val mapper = new ObjectMapper()
     mapper.registerModule(DefaultScalaModule)
     mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)
-    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    //mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     mapper
   }
 
