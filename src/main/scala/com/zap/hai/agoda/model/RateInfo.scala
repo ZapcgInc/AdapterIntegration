@@ -5,7 +5,7 @@ import zap.framework.xml.XmlSupport
 import scala.xml.{Elem, Node}
 
 case class RateInfo(rate: Rate, included: String, surcharges: List[Surcharge], totalPayAmt: TotalPaymentAmount, excluded: String,
-                    promoType: PromotionType)
+                    promoType: Option[PromotionType])
 
 object RateInfo extends XmlSupport[RateInfo] {
 
@@ -17,7 +17,7 @@ object RateInfo extends XmlSupport[RateInfo] {
     (node \ "Surcharges" \\ "Surcharge").map{s => builder.addSurcharge(s.toSurcharge)}
     (node \ "TotalPaymentAmount").map{n => builder.withTotalPayAmt(n.toTotalPaymentAmount)}
     (node \ "Excluded").map{t => builder.withExcluded(t.text)}
-    (node \ "PromotionType").map{n => builder.withPromoType(n.toPromotionType)}
+    (node \ "PromotionType").map{n => builder.withPromoType(Some(n.toPromotionType))}
 
     builder.build()
   }
@@ -35,9 +35,9 @@ class RateInfoBuilder {
   private var surcharges: List[Surcharge] = _
   private var totalPayAmt: TotalPaymentAmount = _
   private var excluded: String = _
-  private var promoType: PromotionType = _
+  private var promoType: Option[PromotionType] = None
 
-  def withPromoType(promoType: PromotionType) = {
+  def withPromoType(promoType: Option[PromotionType]) = {
     this.promoType = promoType
     this
   }
