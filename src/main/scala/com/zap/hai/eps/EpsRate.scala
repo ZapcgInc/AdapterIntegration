@@ -46,9 +46,11 @@ class EpsRateBuilder {
     this
   }
 
-  def addRate(roomPriceByOccupancy: Map[String, EpsRoomRate])     ={
-    this.roomPriceByOccupancy = roomPriceByOccupancy
-    this
+  def addRate(roomRate: EpsRoomRate, occupancy: String): Map[String, EpsRoomRate] ={
+    println("RoomRate----"+roomRate+"occupancy"+occupancy)
+    if(roomPriceByOccupancy == null) roomPriceByOccupancy = Map()
+    roomPriceByOccupancy = roomPriceByOccupancy ++ Map(occupancy->roomRate)
+    roomPriceByOccupancy
   }
 
 

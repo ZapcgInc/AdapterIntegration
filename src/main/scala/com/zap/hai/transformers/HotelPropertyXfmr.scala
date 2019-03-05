@@ -20,7 +20,7 @@ trait HotelPropertyXfmr extends AgodaToEpsXfmr[Hotel, EpsPropertyAvailability] {
       epsRoomBuilder.withRoomName(r.name)
       epsRoomBuilder.withId(r.id)
       builder.withPropertyId(hotel.id)
-      builder.addRoom(epsRoomBuilder.build())
+      //builder.addRoom(epsRoomBuilder.build())
 
 
       t._2.map { room =>

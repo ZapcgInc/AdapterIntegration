@@ -14,10 +14,11 @@ rooms.rates.deposit_required
 rooms.rates.merchant_of_record
  */
 trait RateXfmr extends AgodaToEpsXfmr[Room, EpsRate]{
-
-  val benefitXfmr : AgodaToEpsXfmr[Benefit, EpsAmenity]
   var totalPriceInclusive : Double = 0
   var totalPriceExclusive : Double = 0
+
+
+  val benefitXfmr : AgodaToEpsXfmr[Benefit, EpsAmenity]
 
   //do the rest here.
   override def transform(room: Room): EpsRate = {
@@ -27,6 +28,7 @@ trait RateXfmr extends AgodaToEpsXfmr[Room, EpsRate]{
     rateBuilder.withAvailableRooms(room.remainingRooms)
 
     val ppDays = room.cancellation.policyParameters.headOption.map{pp => pp.days}
+
     ppDays.filter(_ == 365).map{_ => rateBuilder.withIsRefundable(false)}
     ppDays.filter(_ != 365).map{_ => rateBuilder.withIsRefundable(true)}
 
@@ -58,12 +60,26 @@ trait RateXfmr extends AgodaToEpsXfmr[Room, EpsRate]{
     rateBuilder.addBedgroups(bedGroup)
 
     // populate ratesByOccupancy
-    populateRates(room)
 
-
+    val occupancy = Array("2","4")
+    for(occ<-occupancy) {
+      rateBuilder.addRate(populateRate(room), occ)
+    }
     rateBuilder.build()
   }
+  def populateRate(room: Room): EpsRoomRate = {
+    val roomPrice = new EpsRoomRateBuilder
+    roomPrice.nightly= _populateNightlyPrice(room)
 
+    _populateSurcharges(room).foreach(surcharge =>
+    {
+      roomPrice.stay = surcharge._1
+      roomPrice.fees = surcharge._2
+    })
+
+    roomPrice.totals = _populateTotals(room)
+    roomPrice.build()
+  }
   def _populateNightlyPrice(room: Room): List[List[EpsPrice]] = {
     //val lengthOfStay: Int = _calculateLengthOfStay(request)
     val lengthOfStay = 3
@@ -126,7 +142,7 @@ trait RateXfmr extends AgodaToEpsXfmr[Room, EpsRate]{
 
   def _populateInclusivePriceWithCurrency(room: Room): EpsPriceWithCurrency = {
     val inclusiveRate: Double = Math.round(totalPriceInclusive * 100.0) / 100.0
-   // println("totalPriceInclusive"+inclusiveRate)
+    // println("totalPriceInclusive"+inclusiveRate)
     new EpsPriceWithCurrency(
       new EpsPrice(null,inclusiveRate.toString, room.currency),
       new EpsPrice(null,inclusiveRate.toString, room.currency)
@@ -145,26 +161,5 @@ trait RateXfmr extends AgodaToEpsXfmr[Room, EpsRate]{
   def _populateTotals(room: Room): EpsTotalPrice = {
     new EpsTotalPrice(_populateInclusivePriceWithCurrency(room),_populateExclusivePriceWithCurrency(room),null,null,null)
   }
-
-  def populateRates(room: Room) = {
-    var roomPrice: EpsRoomRateBuilder = new EpsRoomRateBuilder
-
-    roomPrice.nightly= _populateNightlyPrice(room)
-
-
-    _populateSurcharges(room).foreach(surcharge =>
-    {
-      roomPrice.stay = surcharge._1
-      roomPrice.fees = surcharge._2
-    })
-
-    roomPrice.totals = _populateTotals(room)
-
-    // return immutable Map.
-    var occupancyMap: scala.collection.mutable.Map[String, EpsRoomRate] = scala.collection.mutable.Map[String, EpsRoomRate]()
-    val occupancy = Array("2")
-    roomPrice.build()
-  }
-
 
 }
