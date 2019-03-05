@@ -6,23 +6,19 @@ import java.time.{Duration, LocalDate}
 import java.util.Date
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException
-import com.zap.hai.agoda.model.ErrorMessage
-import com.zap.hai.constant.{AvailabilityRequestParams, EPSResponseErrorType}
+import com.zap.hai.constant.AvailabilityRequestParams
 import com.zap.hai.controllers.ControllerRequest
-import com.zap.hai.eps.{EPSErrorMessage, EPSErrorResponseBuilder, ErrorField, ErrorResponse}
+import com.zap.hai.eps.{EPSErrorField, EPSErrorMessage, EPSErrorResponse, EPSErrorResponseBuilder}
+import com.zap.hai.validators.constant.EPSResponseErrorType
 import org.apache.commons.lang.StringUtils
 
 import scala.collection.mutable.ArrayBuffer
 
 trait PropAvailValidator extends RequestValidator {
-  override def validate(request: ControllerRequest): Option[ErrorResponse] = {
+  override def validate(request: ControllerRequest): EPSErrorResponse = {
 
-    val errors = new ArrayBuffer[ErrorMessage]()
+    var errors = new ArrayBuffer[Option[EPSErrorMessage]]()
     //new CurrencyCodeValidator().validate(request.params).map{e=>errors += e}
-
-    //new ErrorResponse("","",errors.toList)
-
-    println("Values" + AvailabilityRequestParams.values)
 
     val mandatoryParams = List(AvailabilityRequestParams.PROPERTY_ID, AvailabilityRequestParams.CURRENCY_CODE_KEY,
       AvailabilityRequestParams.LANGUAGE_CODE_KEY, AvailabilityRequestParams.OCCUPANCY_KEY, AvailabilityRequestParams.SALES_CHANNEL,
@@ -30,63 +26,75 @@ trait PropAvailValidator extends RequestValidator {
       AvailabilityRequestParams.SORT_TYPE, AvailabilityRequestParams.COUNTRY_CODE_KEY)
 
     for (param <- mandatoryParams) {
-      val errorResponse: Option[ErrorResponse] = _validateMissingOrBlank(request, param.toString)
-
+      val errorMessage: Option[EPSErrorMessage] = _validateMissingOrBlank(request, param.toString)
+      errors += errorMessage
     }
 
-    var errorResponse: Option[ErrorResponse] = _validatePropertyID(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    var errorMessage: Option[EPSErrorMessage] = _validatePropertyID(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
 
-    errorResponse = _validateStayInfo(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = _validateStayInfo(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
 
-    errorResponse = _validateOccupancy(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = _validateOccupancy(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
 
-    errorResponse = CurrencyCodeValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+
+    errorMessage = CurrencyCodeValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
 
-    errorResponse = LanguageCodeValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = LanguageCodeValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = CountryCodeValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = CountryCodeValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = SalesChannelValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = SalesChannelValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = SalesEnvironmentValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = SalesEnvironmentValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = FilterValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = FilterValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = RateOptionValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = RateOptionValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
-    errorResponse = SortTypeValidator.validate(request)
-    if (errorResponse.isDefined) {
-      Some(errorResponse.get)
+    errorMessage = SortTypeValidator.validate(request)
+    if (errorMessage.isDefined) {
+      Some(errorMessage.get)
+      errors += errorMessage
     }
 
-    None
+    new EPSErrorResponse(EPSResponseErrorType.INVALID_INPUT.errorType,EPSResponseErrorType.INVALID_INPUT.errorMessage, errors.toList)
   }
 
-  def _validateMissingOrBlank(request: ControllerRequest, header: String): Option[ErrorResponse] = {
+  def _validateMissingOrBlank(request: ControllerRequest, header: String): Option[EPSErrorMessage] = {
 
     val headerValues: List[String] = request.params(header.toString)
     println("Headers" + headerValues)
@@ -103,24 +111,25 @@ trait PropAvailValidator extends RequestValidator {
     None
   }
 
-    def _validatePropertyID(request: ControllerRequest): Option[ErrorResponse] = {
+  def _validatePropertyID(request: ControllerRequest): Option[EPSErrorMessage] = {
     if (request.params(AvailabilityRequestParams.PROPERTY_ID.toString).size > 250) {
+      val errorFields = List(new EPSErrorField("property_id", request.params("property_id").size.toString, null))
       val responseError: EPSErrorMessage = new EPSErrorMessage(
         "property_id.above_maximum",
         "The number of property_id's passed in must not be greater than 250.",
-        new ErrorField("property_id", request.params("property_id").size.toString))
+        errorFields)
 
-       Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+      responseError
     }
 
     None
   }
 
-  def _validateOccupancy(request: ControllerRequest): Option[ErrorResponse] = {
+  def _validateOccupancy(request: ControllerRequest): Option[EPSErrorMessage] = {
 
     val countNonBlankOccupancy: Int = request.params(AvailabilityRequestParams.OCCUPANCY_KEY.toString).count(StringUtils.isNotBlank)
     if (countNonBlankOccupancy == 0) {
-       Some(EPSErrorResponseBuilder.createForMissingInput(AvailabilityRequestParams.OCCUPANCY_KEY.toString).get)
+      Some(EPSErrorResponseBuilder.createForMissingInput(AvailabilityRequestParams.OCCUPANCY_KEY.toString).get)
     }
 
     for (occupancy: String <- request.params(AvailabilityRequestParams.OCCUPANCY_KEY.toString)) {
@@ -130,31 +139,34 @@ trait PropAvailValidator extends RequestValidator {
 
         if (adultsCount > 8) {
           // TODO: Add value to error response
+          val errorFields = List(new EPSErrorField("occupancy", "querystring", adultsCount.toString))
           val responseError: EPSErrorMessage = new EPSErrorMessage(
             "number_of_adults.invalid_above_maximum",
             "Number of occupancies must be less than 9.",
-            new ErrorField("occupancy"))
+            errorFields
+          )
 
-          Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+          responseError
         }
 
         if (adultsCount == 0) {
+          val errorField = List(new EPSErrorField("occupancy", "querystring", adultsCount.toString))
           val responseError: EPSErrorMessage = new EPSErrorMessage(
             "number_of_adults.invalid_below_minimum",
             "Number of adults must be greater than 0.",
-            new ErrorField("occupancy", adultsCount.toString))
+            errorField)
 
-          return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+          responseError
         }
 
         if (split.length == 2) {
           val invalidChildrenAge: Option[Int] = split(1).split(",").map(_.toInt).find(_ >= 18)
           if (invalidChildrenAge.isDefined) {
-            val responseError:EPSErrorMessage = new EPSErrorMessage(
+            val responseError: EPSErrorMessage = new EPSErrorMessage(
               "child_age.invalid_outside_accepted_range",
-              "Child age must be between 0 and 17.",
-              new ErrorField("occupancy"))
-            return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+              "Child age must be between 0 and 17.", null
+            )
+            responseError
           }
         }
       }
@@ -178,7 +190,7 @@ trait PropAvailValidator extends RequestValidator {
     if (date == null) false else true
   }
 
-  def _validateStayInfo(request: ControllerRequest): Option[ErrorResponse] = {
+  def _validateStayInfo(request: ControllerRequest): Option[EPSErrorMessage] = {
     val checkinParam: String = request.params(AvailabilityRequestParams.CHECKIN_PARAM_KEY.toString).head
     val checkoutParam: String = request.params(AvailabilityRequestParams.CHECKOUT_PARAM_KEY.toString).head
 
@@ -187,22 +199,24 @@ trait PropAvailValidator extends RequestValidator {
 
     if (!isCheckinValid) {
       println("Valid: " + isCheckinValid)
+      val errorFields = List(new EPSErrorField("checkin", checkinParam, null))
       val responseError: EPSErrorMessage = new EPSErrorMessage(
         "checkin.invalid_date_format",
         "Invalid checkin format. " +
-          "It must be formatted in ISO 8601 (YYYY-mm-dd) http://www.iso.org/iso/catalogue_detail?csnumber=40874.",
-        new ErrorField("checkin", checkinParam))
+          "It must be formatted in ISO 8601 (YYYY-mm-dd) http://www.iso.org/iso/catalogue_detail?csnumber=40874.", errorFields
+      )
 
-      Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+      responseError
     }
     if (!isCheckoutValid) {
+      val errorFields = List(new EPSErrorField("checkout", checkinParam, null))
       val responseError: EPSErrorMessage = new EPSErrorMessage(
         "checkout.invalid_date_format",
         "Invalid checkout format. " +
-          "It must be formatted in ISO 8601 (YYYY-mm-dd) http://www.iso.org/iso/catalogue_detail?csnumber=40874.",
-        new ErrorField("checkout", checkinParam))
+          "It must be formatted in ISO 8601 (YYYY-mm-dd) http://www.iso.org/iso/catalogue_detail?csnumber=40874.", errorFields
+      )
 
-      return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+      responseError
     }
 
     val differenceInDays: Long = Duration.between(
@@ -212,21 +226,23 @@ trait PropAvailValidator extends RequestValidator {
 
 
     if (differenceInDays < 0) {
+      val errorFields = List(new EPSErrorField("checkin", checkinParam, null))
       val responseError: EPSErrorMessage = new EPSErrorMessage(
         "checkin.invalid_date_in_the_past",
         "Checkin cannot be in the past.",
-        new ErrorField("checkin", checkinParam))
+        errorFields)
 
-      return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+      responseError
     }
 
     if (differenceInDays > 500) {
+      val errorFields = List(new EPSErrorField("checkin", checkinParam, null))
       val responseError: EPSErrorMessage = new EPSErrorMessage(
         "checkin.invalid_date_too_far_out",
         "Checkin too far in the future.",
-        new ErrorField("checkin", checkinParam))
+        errorFields)
 
-      return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
+      responseError
     }
 
     val differenceBetweenStayDates: Long = Duration.between(
@@ -234,15 +250,13 @@ trait PropAvailValidator extends RequestValidator {
       LocalDate.from(DateTimeFormatter.ISO_LOCAL_DATE.parse(checkoutParam)).atStartOfDay()
     ).toDays
 
-//    if (differenceBetweenStayDates < 0) {
-//      val responseError:EPSErrorMessage = new EPSErrorMessage("checkout.invalid_checkout_before_checkin", "Checkout must be after checkin.")
-//      responseError.fields = Array(
-//        new ErrorField("checkin"),
-//        new ErrorField("checkout")
-//      ).toList
+    if (differenceBetweenStayDates < 0) {
+      val errorFields = List(new EPSErrorField("checkin", "querystring", null), new EPSErrorField("checkout", "querystring", null))
+      val responseError: EPSErrorMessage = new EPSErrorMessage("checkout.invalid_checkout_before_checkin",
+        "Checkout must be after checkin.", errorFields)
 
-//      return Some(new ErrorResponse(EPSResponseErrorType.INVALID_INPUT, responseError))
- //   }
+      responseError
+    }
 
     None
   }

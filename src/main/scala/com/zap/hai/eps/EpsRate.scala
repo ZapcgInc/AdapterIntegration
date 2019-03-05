@@ -41,6 +41,29 @@ class EpsRateBuilder {
     this
   }
 
+  def addLinks(linksMap:Map[String,EpsLink])={
+    this.links = linksMap
+    this
+  }
+
+  def addRate(roomPriceByOccupancy: Map[String, EpsRoomRate])     ={
+    this.roomPriceByOccupancy = roomPriceByOccupancy
+    this
+  }
+
+
+  def addBedgroups(epsBedGroup: EpsBedGroup) = {
+    if(bedGroups == null) bedGroups = List()
+    bedGroups = bedGroups ++ List(epsBedGroup)
+    this
+  }
+
+  def addCancelPolicies(cancelPolicy: EpsCancelPenalty) = {
+    if(cancelPolicies == null) cancelPolicies = List()
+    cancelPolicies = cancelPolicies ++ List(cancelPolicy)
+    this
+  }
+
   def withPromoId(promoId:String)={
     this.promoId = promoId
     this
@@ -80,6 +103,13 @@ class EpsRateBuilder {
     this.id = id
     this
   }
+
+  def withLinks(linksMap:Map[String,EpsLink])={
+    this.links = linksMap
+    this
+  }
+
+
 
   def build() = {
     EpsRate(id: String, availableRooms: Int, refundable: Boolean, depositRequired: Boolean, fencedDeal: Boolean,

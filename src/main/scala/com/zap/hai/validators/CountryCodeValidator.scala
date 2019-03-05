@@ -2,7 +2,7 @@ package com.zap.hai.validators
 
 import com.zap.hai.constant.AvailabilityRequestParams
 import com.zap.hai.controllers.ControllerRequest
-import com.zap.hai.eps.{EPSErrorResponseBuilder, ErrorResponse}
+import com.zap.hai.eps.{EPSErrorMessage, EPSErrorResponseBuilder}
 
 object CountryCodeValidator
 {
@@ -17,13 +17,13 @@ object CountryCodeValidator
     "UZ","VA","VC","VG","VN","VU","WF","WS","XK","YE","YT","ZA","ZM","ZW")
 
 
-  def validate(request: ControllerRequest): Option[ErrorResponse] =
+  def validate(request: ControllerRequest): Option[EPSErrorMessage] =
   {
     val countryCode:String = request.params(AvailabilityRequestParams.COUNTRY_CODE_KEY.toString).head
     //println("Country Code"+countryCode)
     if (!VALID_COUNTRY_CODE.contains(countryCode))
     {
-      return Some(EPSErrorResponseBuilder.createForUnsupportedInput(AvailabilityRequestParams.COUNTRY_CODE_KEY.toString).get)
+      Some(EPSErrorResponseBuilder.createForUnsupportedInput(AvailabilityRequestParams.COUNTRY_CODE_KEY.toString).get)
     }
 
     None

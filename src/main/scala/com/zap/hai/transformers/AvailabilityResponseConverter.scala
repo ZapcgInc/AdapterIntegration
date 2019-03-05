@@ -9,7 +9,9 @@ trait AvailabilityResponseConverter extends AgodaToEpsXfmr[AvailabilityResponse,
 
   override def transform(agoda: AvailabilityResponse): EpsAvailabilityResponse = {
     val list = agoda.hotels.map{hotel => hotelPropTransformer.transform(hotel)}
-    new EpsAvailabilityResponse(list)
+    val epsPropertyAvailability = new EpsAvailabilityResponse(list)
+    println("EPS"+epsPropertyAvailability)
+    epsPropertyAvailability
   }
 
 }

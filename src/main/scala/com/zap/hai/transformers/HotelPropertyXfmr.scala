@@ -1,7 +1,7 @@
 package com.zap.hai.transformers
 
 import com.zap.hai.agoda.model.{Hotel, Rate, Room}
-import com.zap.hai.eps.{EpsPropertyAvailability, EpsPropertyAvailabilityBuilder, EpsRate, EpsRoomBuilder}
+import com.zap.hai.eps._
 
 trait HotelPropertyXfmr extends AgodaToEpsXfmr[Hotel, EpsPropertyAvailability] {
 
@@ -19,11 +19,14 @@ trait HotelPropertyXfmr extends AgodaToEpsXfmr[Hotel, EpsPropertyAvailability] {
       val r = t._2.head
       epsRoomBuilder.withRoomName(r.name)
       epsRoomBuilder.withId(r.id)
+      builder.withPropertyId(hotel.id)
       builder.addRoom(epsRoomBuilder.build())
+
 
       t._2.map { room =>
         epsRoomBuilder.addRate(rateXfmr.transform(room))
       }
+      builder.addRoom(epsRoomBuilder.build())
 
     }
 

@@ -2,13 +2,13 @@ package com.zap.hai.validators
 
 import com.zap.hai.constant.AvailabilityRequestParams
 import com.zap.hai.controllers.ControllerRequest
-import com.zap.hai.eps.{EPSErrorResponseBuilder, ErrorResponse}
+import com.zap.hai.eps.{EPSErrorMessage, EPSErrorResponseBuilder}
 
 object SortTypeValidator
 {
   private val VALID_SORT_TYPE: List[String] = List("preferred")
 
-  def validate(request: ControllerRequest): Option[ErrorResponse] =
+  def validate(request: ControllerRequest): Option[EPSErrorMessage] =
   {
     val sortType:String = request.params(AvailabilityRequestParams.SORT_TYPE.toString).head
 

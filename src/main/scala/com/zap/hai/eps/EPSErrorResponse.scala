@@ -1,33 +1,20 @@
 package com.zap.hai.eps
 
-import com.zap.hai.constant.EPSResponseErrorType.EPSResponseErrorType
-import com.zap.hai.constant.{AvailabilityRequestParams, EPSResponseErrorType}
+import com.zap.hai.constant.AvailabilityRequestParams
 
-case class ErrorField(name:String, `type`:String, value:String){
-  def this(name:String)= this(name,"querystring")
-  def this(name:String,value:String)=this(name,"querystring",value)
-}
-case class EPSErrorMessage(`type`:String, message:String, fields: List[ErrorField]){
-  def this(`type`:String,message: String) = this(`type`,message)
-  def this(`type`:String,message: String, fields:ErrorField) = this(`type`,message,Array(fields))
-
-}
-case class ErrorResponse(`type`:String,message:String,errors: List[EPSErrorMessage] ) {
-  def this(errorType:EPSResponseErrorType) = this(errorType.errorType,errorType.errorMessage,Nil)
-  def this(errorType: EPSResponseErrorType,error:EPSErrorMessage) = this(errorType.errorType,errorType.errorMessage,Array(error).toList)
-}
-
+case class EPSErrorField(name:String, `type`:String, value:String)
+case class EPSErrorMessage(`type`:String, message:String, fields: List[EPSErrorField])
+case class EPSErrorResponse(`type`:String,message:String,errors: List[Option[EPSErrorMessage]] )
 
 
 object EPSErrorResponseBuilder {
-  def createForMissingInput(fieldName: String): Option[ErrorResponse] = {
+  def createForMissingInput(fieldName: String): Option[EPSErrorMessage] = {
     val responseErrorType: String = s"$fieldName.required"
     val responseErrorMessage: String = _createErrorMessageForMissingInput(fieldName)
-
-    Some(new ErrorResponse(
-      EPSResponseErrorType.INVALID_INPUT,
-      new EPSErrorMessage(responseErrorType, responseErrorMessage, new ErrorField(fieldName))
-    ))
+    val errorFields = List(new EPSErrorField(fieldName,"querystring",null))
+    Some(
+      new EPSErrorMessage(responseErrorType, responseErrorMessage, errorFields)
+    )
   }
 
   def _createErrorTypeForUnsupportedInput(fieldName: String): String = {
@@ -62,14 +49,13 @@ object EPSErrorResponseBuilder {
     }
   }
 
-  def createForUnsupportedInput(fieldName: String): Option[ErrorResponse] = {
+  def createForUnsupportedInput(fieldName: String): Option[EPSErrorMessage] = {
     val responseErrorType: String = _createErrorTypeForUnsupportedInput(fieldName)
     val responseErrorMessage: String = _createErrorMessageForUnsupportedInput(fieldName)
-
-    Some(new ErrorResponse(
-      EPSResponseErrorType.INVALID_INPUT,
-      new EPSErrorMessage(responseErrorType, responseErrorMessage, new ErrorField(fieldName))
-    ))
+    val errorFields = List(new EPSErrorField(fieldName,"querystring",null))
+    Some(
+      new EPSErrorMessage(responseErrorType, responseErrorMessage, errorFields)
+    )
   }
 
   def _createErrorMessageForMissingInput(fieldName: String): String = {

@@ -2,7 +2,7 @@ package com.zap.hai.validators
 
 import com.zap.hai.constant.AvailabilityRequestParams
 import com.zap.hai.controllers.ControllerRequest
-import com.zap.hai.eps.{EPSErrorResponseBuilder, ErrorMessage, ErrorResponse}
+import com.zap.hai.eps.{EPSErrorMessage, EPSErrorResponseBuilder}
 
 object CurrencyCodeValidator
 {
@@ -10,13 +10,13 @@ object CurrencyCodeValidator
         "HKD", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RUB", "SAR", "SEK", "SGD", "THB",
         "TRY", "TWD", "USD", "VND", "ZAR")
 
-    def validate(request: ControllerRequest): Option[ErrorResponse] =
+    def validate(request: ControllerRequest): Option[EPSErrorMessage] =
     {
         val currencyCode:String = request.params("AvailabilityRequestParams.CURRENCY_CODE_KEY.toString").head
         println(currencyCode)
         if (!VALID_CURRENCY_CODES.contains(currencyCode))
         {
-            return Some(EPSErrorResponseBuilder.createForUnsupportedInput(AvailabilityRequestParams.CURRENCY_CODE_KEY.toString).get)
+            Some(EPSErrorResponseBuilder.createForUnsupportedInput(AvailabilityRequestParams.CURRENCY_CODE_KEY.toString).get)
         }
 
         None

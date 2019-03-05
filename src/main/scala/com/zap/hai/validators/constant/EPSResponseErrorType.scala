@@ -1,4 +1,4 @@
-package com.zap.hai.constant
+package com.zap.hai.validators.constant
 
 object EPSResponseErrorType extends Enumeration
 {

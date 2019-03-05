@@ -4,12 +4,13 @@ import zap.framework.xml.XmlSupport
 
 import scala.xml.{Elem, Node}
 
-case class Rate(incluisve: Double, fees: Double, exclusive: Double, tax: Double)
+case class Rate(inclusive: Double, fees: Double, exclusive: Double, tax: Double)
 
 object Rate extends XmlSupport[Rate] {
 
   override def fromXml(node: Node): Rate = {
     val builder = new RateBuilder()
+    builder.withInclusive((node \@ "inclusive").toDouble)
     builder.withExclusive((node \@ "exclusive").toDouble)
     builder.withFees((node \@ "fees").toDouble)
     builder.withInclusive((node \@ "inclusive").toDouble)
@@ -24,7 +25,7 @@ object Rate extends XmlSupport[Rate] {
 
 class RateBuilder {
 
-  private var incluisve: Double = _
+  private var inclusive: Double = _
   private var fees: Double = _
   private var exclusive: Double = _
   private var tax: Double = _
@@ -45,11 +46,11 @@ class RateBuilder {
   }
 
   def withInclusive(inclusive: Double) = {
-    this.incluisve = inclusive
+    this.inclusive = inclusive
     this
   }
 
-  def build() = Rate(incluisve, fees, exclusive, tax)
+  def build() = Rate(inclusive, fees, exclusive, tax)
 
 
 }
